@@ -5,6 +5,6 @@
 `pip3 install -r requirements.txt`
 
 ## Running the bot
-`python3 MainGame.py saved_data.json`
+`python3 MainGame.py input_data.json`
 
 By default, the bot outputs logs to `bot_log.log`
