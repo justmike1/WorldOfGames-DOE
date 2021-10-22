@@ -13,18 +13,21 @@ def load_game():
         d['Game'] = input("Please choose a game to play: \n 1. Memory Game - a sequence of numbers will appear for 1 second and you have to guess it back. \n 2. Guess Game - guess a number and see if you chose like the computer. \n 3. Currency Roulette - try and guess the value of a random amount of USD to ILS. \n : ")
         if int(d['Game']) > 3:
             print('num is invalid')
+            break
         elif int(d['Game']) < 1:
             print('num is invalid')
             break
         d['Difficulty'] = input("Please choose game difficulty from 1 to 5: ")
         if int(d['Difficulty']) > 5:
             print('num is invalid')
+            break
         elif int(d['Difficulty']) < 1:
             print('num is invalid')
             break
         else:
-            return(name,d)
             next_level()
+            return(name,d)
+            #next_level()
 
 out = {}
 
@@ -34,6 +37,7 @@ while True:
         break
     elif exit.lower() != 'y':
         print("Try again")
+        break
     else:
         name, d = load_game()
         out[name] = d
