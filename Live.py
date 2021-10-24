@@ -2,10 +2,12 @@ import json
 import pandas as pd
 from abc import ABC, abstractmethod
 
+#this function will start the game and difficulty chosen
 def next_level():
     print('This is what you chose:')
     print(pd.read_json('input_data.json'))
 
+#this funtion saves user input to json file to use it in the future with the games
 def load_game():
     name = str(input("Hello There! What is your name? "))
     print(f"Hello {name} and welcome to the World of Games (WoG). \nHere you can find many cool games to play!")
@@ -40,7 +42,7 @@ def main():
             name, d = load_game()
             out[name] = d
 
-# I made a json to save input data
+# I made a json to save input data to use with the games
 with open('input_data.json', 'w') as f:
     json.dump(out, f, indent=2)
 
