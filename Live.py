@@ -1,10 +1,19 @@
-import json
-import pandas as pd
-from abc import ABC, abstractmethod
+def MemoryGame(difficulty):
+    print("Starting Memory Game with difficulty", difficulty)
 
-def next_level():
-    print('This is what you chose:')
-    print(pd.read_json('input_data.json'))
+def GuessGame(difficulty):
+    print("Starting Guess Game with difficulty", difficulty)
+
+def CurrencyRouletteGame(difficulty):
+    print("Starting Currency Roulette Game with difficulty", difficulty)
+
+def start_game(game_id, difficulty):
+    if game_id == 1:
+        MemoryGame(difficulty)
+    elif game_id == 2:
+        GuessGame(difficulty)
+    elif game_id == 3:
+        CurrencyRouletteGame(difficulty)
 
 def load_game():
     name = input("Hello There! What is your name? ")
@@ -17,37 +26,11 @@ def load_game():
     d['Difficulty'] = int(input("Please choose game difficulty from 1 to 5: "))
     if d['Difficulty'] not in range(1, 6):
         print('num is invalid')
-        return(main())
-    return(name,d)
-
+        return (main())
+    return (name, d)
 
 def main():
-    out = {}
-    while True:
-        exit = input('Are you sure you want to play (y/n)? ')
-        if exit.lower() == "n":
-            break
-        elif exit.lower() != "y":
-            print("Try again")
-            return(main())
-        else:
-            name, d = load_game()
-            out[name] = d
-    with open('input_data.json', 'w') as f: # I made a json to save input data
-        json.dump(out, f, indent=2)
+    name, d = load_game()
+    start_game(d["Game"], d["Difficulty"])
 
-
-class WoG(ABC):
-    pass
-
-class MemoryGame(WoG):
-    pass
-
-class CurrencyRouletteGame(WoG):
-    pass
-
-class GuessGame(WoG):
-    pass
-
-if __name__ == "__main__":
-    main()
+main()
