@@ -1,6 +1,15 @@
-from Live import load_game, welcome
+from Live import main
+import logging
 
-name = input("Hello There! What is your name? ")
-print(welcome(name))
+FORMAT = '%(message)s'
+logging.basicConfig(format=FORMAT)
 
-load_game()
+while True:
+    exit = input('Are you sure you want to play? (y/n): ')
+    if exit.lower() == 'n':
+        break
+    elif exit.lower() != 'y':
+        logging.warning('\ninput is invalid, try again: ')
+    else:
+        main()
+
