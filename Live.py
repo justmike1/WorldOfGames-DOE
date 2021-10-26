@@ -1,13 +1,19 @@
 import logging
+from MemoryGame import Game1
+from GuessGame import Game2
+from CurrencyRouletteGame import Game3
 
 def MemoryGame(difficulty):     #Starts the game's script at requested difficulty
     print(f'Starting Memory Game with difficulty {difficulty}')
+    Game1(difficulty)
 
 def GuessGame(difficulty):      #Starts the game's script at requested difficulty
     print(f'Starting Guess Game with difficulty {difficulty}')
+    Game2(difficulty)
 
 def CurrencyRouletteGame(difficulty):       #Starts the game's script at requested difficulty
     print(f'Starting Currency Roulette Game with difficulty {difficulty}')
+    Game3(difficulty)
 
 def start_game(game_id, difficulty):        #game_id equals d['game'], vice versa about difficulty, look main() function
     if game_id == 1:
