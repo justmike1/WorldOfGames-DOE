@@ -1,28 +1,36 @@
 import random
-from abc import ABC, abstractmethod
 
+class Game2:
+    def __init__(self, difficulty):
+        self.Difficulty = difficulty
+        self.play()
 
-class GuessGame:
-    def __init__(self, Difficulty, Secret_number):
-        self.Difficulty = Difficulty
-        self.Secret_number = Secret_number
-
-    @classmethod
     def generate_number(self):
-        Secret_number = random.randint(1, 5)
-        print(Secret_number)
+        self.secret_number = random.randint(1, self.Difficulty)
 
-    @classmethod
     def get_guess_from_user(self):
-        target_num, guess_num = random.randint(1, self.Difficulty), 0
-        while target_num != guess_num:
-            pass
+        self.User_Guess = int(input(f'Guess a number between 1 to {self.Difficulty}: '))
 
-    @classmethod
     def compare_results(self):
+        i = 1
+        UserWins = False
+        while i < 3:
+            if self.User_Guess == self.secret_number:
+                print('Correct, You made it!')
+                UserWins = True
+                break
+            else:
+                print('The number you guessed is incorrect')
+                i += 1
+                self.get_guess_from_user()
+        return UserWins
 
-    @classmethod
+
     def play(self):
-        pass
+        self.generate_number()
+        self.get_guess_from_user()
+        return self.compare_results()
+
+
 
 
