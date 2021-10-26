@@ -6,7 +6,7 @@ class Game2:
         self.play()
 
     def generate_number(self):
-        self.secret_number = random.randint(1, self.Difficulty)
+        self.secret_number = random.randint(1, self.Difficulty) 
 
     def get_guess_from_user(self):
         self.User_Guess = int(input(f'Guess a number between 1 to {self.Difficulty}: '))
@@ -14,7 +14,7 @@ class Game2:
     def compare_results(self):
         i = 1
         UserWins = False
-        while i < 3:
+        while i < 3:        # the user gets 3 tries
             if self.User_Guess == self.secret_number:
                 print('Correct, You made it!')
                 UserWins = True
@@ -24,7 +24,6 @@ class Game2:
                 i += 1
                 self.get_guess_from_user()
         return UserWins
-
 
     def play(self):
         self.generate_number()
