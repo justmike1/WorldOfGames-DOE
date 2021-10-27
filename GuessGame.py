@@ -15,7 +15,7 @@ class Game2:
         i = 1
         UserWins = False
         while i < 3:        # the user gets 3 tries
-            if int(self.User_Guess) == self.secret_number:
+            if self.User_Guess == str(self.secret_number):
                 print(f'Congrats, You made it! Secret number was {self.secret_number}!')
                 UserWins = True
                 break
