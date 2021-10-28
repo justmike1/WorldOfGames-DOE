@@ -14,7 +14,7 @@ class Game3:
         parsed = json.loads(data)
         self.USD_ILS = float(parsed["USD_ILS"])
         self.random_number = random.randint(1, 101)
-        self.generated_number = str(round(self.random_number * self.USD_ILS, 1))
+        self.generated_number = str(round(self.random_number * self.USD_ILS)
 
     def get_guess_from_user(self):
         self.User_Guess = input(f'Guess a the value of USD\ILS ')
