@@ -7,10 +7,12 @@ class Game1:
         self.play()
 
     def generate_sequence(self):
-        self.res = random.sample(range(1, 101), self.Difficulty)
-        print("Random number list is: " + str(self.res), end='\r')
-        time.sleep(1)
-        print('')
+        res = random.sample(range(1, 101), self.Difficulty)
+        res_str = f"Random number list is {res}"
+        print(res_str, flush=True, end='\r')
+        time.sleep(3)
+        print('    '*len(res_str))
+
 
 
 
@@ -23,7 +25,21 @@ class Game1:
         self.get_list_from_user()
        # return self.is_list_equal
 
-
+'''
+    def is_list_equal(self):
+        i = 1
+        UserWins = False
+        while i < 3:
+            if self.User_Guess == self.secret_number:
+                print('Correct, You made it!')
+                UserWins = True
+                break
+            else:
+                print('The number you guessed is incorrect')
+                i += 1
+                self.get_guess_from_user()
+        return UserWins
+'''
 
 
 
