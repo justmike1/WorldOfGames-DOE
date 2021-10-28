@@ -1,5 +1,6 @@
 from Live import main
 import logging
+from abc import ABC, abstractmethod
 
 FORMAT = '%(message)s'
 logging.basicConfig(format=FORMAT)
@@ -14,3 +15,10 @@ while True:
         main()
         break
 
+'''''
+class WoG(ABC):
+    @abstractmethod
+    def __init__(self, difficulty):
+        self.Difficulty = difficulty
+        self.play()
+'''
