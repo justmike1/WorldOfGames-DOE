@@ -14,15 +14,16 @@ class Game3:
         parsed = json.loads(data)
         self.USD_ILS = float(parsed["USD_ILS"])
         self.random_number = random.randint(1, 101)
-        self.generated_number = str(round(self.random_number * self.USD_ILS)
+        self.gen_number = int(round(self.random_number * self.USD_ILS))
+        self.gen_list = list(range(self.gen_number-5, self.gen_number+5))
 
     def get_guess_from_user(self):
-        self.User_Guess = input(f'Guess a the value of USD\ILS ')
+        self.User_Guess = input(f'Guess the number generated: ')
         i = 1
         UserWins = False
         while i < 3:  # the user gets 3 tries
-            if self.User_Guess == str(self.secret_number):
-                print(f'Congrats, You made it! Secret number was {self.secret_number}!')
+            if self.User_Guess in self.gen_list:
+                print(f'Congrats, You made it! Generated number was {self.gen_number}!')
                 UserWins = True
                 break
             else:
