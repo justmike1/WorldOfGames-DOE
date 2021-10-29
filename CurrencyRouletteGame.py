@@ -23,14 +23,14 @@ class Game3:
         i = 1
         UserWins = False
         while i < 3:  # the user gets 3 tries
-            for self.User_Guess in self.gen_list:
-                print(f'Congrats, You made it! Generated number was {self.gen_number}!')
-                UserWins = True
-                break
-            else:
+            if self.User_Guess not in self.gen_list:
                 print('The number you guessed is incorrect')
                 i += 1
                 self.get_guess_from_user()
+            else:
+                print(f'Congrats, You made it! Generated number was {self.gen_number}!')
+                UserWins = True
+                break
         return UserWins
 
     def play(self):
