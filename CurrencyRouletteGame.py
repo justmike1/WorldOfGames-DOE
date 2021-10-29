@@ -19,7 +19,7 @@ class Game3:
         print(f'{self.gen_list}')
 
     def get_guess_from_user(self):
-        self.User_Guess = input(f'Guess the number generated: ')
+        self.User_Guess = int(input(f'Guess the number generated: '))
         i = 1
         UserWins = False
         while i < 3:  # the user gets 3 tries
