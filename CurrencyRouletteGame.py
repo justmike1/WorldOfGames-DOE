@@ -7,7 +7,7 @@ class Game3:
         self.Difficulty = difficulty
         self.play()
 
-    def get_money_interval(self):
+    def generate_number(self):
         url = "https://free.currconv.com/api/v7/convert?q=USD_ILS&compact=ultra&apiKey=3eee6e211600d6203628" #  the free API
         response = requests.get(url)
         data = response.text
@@ -20,8 +20,9 @@ class Game3:
 
     def get_guess_from_user(self):
         self.User_Guess = int(input(f'Guess the number generated: '))
+
+    def compare_results(self):
         i = 1
-        UserWins = False
         while i < 3:  # the user gets 3 tries
             if self.User_Guess not in self.gen_list:
                 print('The number you guessed is incorrect')
@@ -29,13 +30,13 @@ class Game3:
                 self.get_guess_from_user()
             else:
                 print(f'Congrats, You made it! Generated number was {self.gen_number}!')
-                UserWins = True
                 break
-        return UserWins
 
     def play(self):
-        self.get_money_interval()
-        return self.get_guess_from_user()
+        self.generate_number()
+        self.get_guess_from_user()
+        return self.compare_results()
+
 
 
 
