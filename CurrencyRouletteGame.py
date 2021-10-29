@@ -8,14 +8,15 @@ class Game3:
         self.play()
 
     def get_money_interval(self):
-        url = "https://free.currconv.com/api/v7/convert?q=USD_ILS&compact=ultra&apiKey=3eee6e211600d6203628"
-        response = requests.get(url)
+        url = "https://free.currconv.com/api/v7/convert?q=USD_ILS&compact=ultra&apiKey=3eee6e211600d6203628" #  the free API
+        response = requests.get(url)    
         data = response.text
         parsed = json.loads(data)
-        self.USD_ILS = float(parsed["USD_ILS"])
-        self.random_number = random.randint(1, 101)
-        self.gen_number = int(round(self.random_number * self.USD_ILS))
-        self.gen_list = list(range(self.gen_number-5, self.gen_number+5))
+        self.USD_ILS = float(parsed["USD_ILS"])     #get the value
+        self.random_number = random.randint(1, 101)     #generate random number
+        self.gen_number = int(round(self.random_number * self.USD_ILS))     # round it to integer
+        self.gen_list = list(range(self.gen_number-self.Difficulty, self.gen_number+self.Difficulty)) #generate a list in the range of difficulty
+        print(f'{self.gen_list}')
 
     def get_guess_from_user(self):
         self.User_Guess = input(f'Guess the number generated: ')
