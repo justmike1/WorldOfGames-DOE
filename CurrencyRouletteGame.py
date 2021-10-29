@@ -9,7 +9,7 @@ class Game3:
 
     def get_money_interval(self):
         url = "https://free.currconv.com/api/v7/convert?q=USD_ILS&compact=ultra&apiKey=3eee6e211600d6203628" #  the free API
-        response = requests.get(url)    
+        response = requests.get(url)
         data = response.text
         parsed = json.loads(data)
         self.USD_ILS = float(parsed["USD_ILS"])     #get the value
@@ -23,7 +23,7 @@ class Game3:
         i = 1
         UserWins = False
         while i < 3:  # the user gets 3 tries
-            if self.User_Guess in self.gen_list:
+            for self.User_Guess in self.gen_list:
                 print(f'Congrats, You made it! Generated number was {self.gen_number}!')
                 UserWins = True
                 break
