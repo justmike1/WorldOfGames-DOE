@@ -14,12 +14,13 @@ class Game3:
         parsed = json.loads(data)
         self.USD_ILS = float(parsed["USD_ILS"])     #get the value
         self.random_number = random.randint(1, 101)     #generate random number
-        self.gen_number = round(self.random_number * self.USD_ILS)     # round it to integer
+        print(f'{self.random_number} USD')
+        self.gen_number = round(self.random_number//self.USD_ILS)     # round it to integer
         self.gen_list = list(range(self.gen_number-self.Difficulty, self.gen_number+self.Difficulty)) #generate a list in the range of difficulty
         #print(f'{self.gen_list}') #Delete the sharp symbol when you want to test
 
     def get_guess_from_user(self):
-        self.User_Guess = int(input(f'Guess the number generated: '))
+        self.User_Guess = int(input(f'Guess the number in ILS: '))
 
     def compare_results(self):
         i = 1
