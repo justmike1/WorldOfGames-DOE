@@ -26,6 +26,9 @@ def start_game(game_id, difficulty):        #game_id equals d['game'], vice vers
 def load_game():
     # Has to start with an try exception to get through the ValueError (typing a letter string)
     name = input("Hello There! What is your name? ")
+    if name.isdigit() == True:
+        logging.error('input is invalid')
+        return main()
     print(f"Hello {name} and welcome to the World of Games (WoG). \nHere you can find many cool games to play!")
     # The variable that saves the Game & Difficulty inputs (has to be the first in the block & empty dict)
     d = {}
