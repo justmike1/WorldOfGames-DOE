@@ -10,11 +10,11 @@ class Game1:
         self.res = random.sample(range(1, 101), self.Difficulty)
         res_str = f"Random number list is {self.res}"
         print(res_str, flush=True, end='\r')
-        time.sleep(0.7)
+        time.sleep(3)
         print('    ' * len(res_str))
 
     def get_list_from_user(self):
-        self.user_res = random.sample(range(int(input('Guess the generated list: '))))
+        self.user_res = int(input('Guess the generated list: '))
 
     def compare_results(self):
         i = 1
