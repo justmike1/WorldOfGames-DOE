@@ -6,5 +6,3 @@
 
 ## Running the bot
 `python3 MainGame.py`
-
-By default, the bot outputs logs to `bot_log.log`
