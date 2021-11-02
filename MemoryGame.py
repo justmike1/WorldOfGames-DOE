@@ -7,7 +7,7 @@ class Game1(WoG):
         self.res = random.sample(range(1, 101), self.Difficulty)
         res_str = f"Random number list is {self.res}"
         print(res_str, flush=True, end='\r')
-        time.sleep(3)
+        time.sleep(0.7)
         print('    ' * len(res_str))
 
     def get_input_from_user(self):
