@@ -1,14 +1,11 @@
+from MainGame import *
 import random
 
-class Game2:
-    def __init__(self, difficulty):
-        self.Difficulty = difficulty
-        self.play()
-
-    def generate_number(self):
+class Game2(WoG):
+    def generate(self):
         self.secret_number = random.randint(1, self.Difficulty)
 
-    def get_guess_from_user(self):
+    def get_input_from_user(self):
         self.User_Guess = input(f'Guess a number between 1 to {self.Difficulty}: ')
 
     def compare_results(self):
@@ -22,13 +19,9 @@ class Game2:
             else:
                 print('The number you guessed is incorrect')
                 i += 1
-                self.get_guess_from_user()
+                self.get_input_from_user()
         return UserWins
 
-    def play(self):
-        self.generate_number()
-        self.get_guess_from_user()
-        return self.compare_results()
 
 
 
