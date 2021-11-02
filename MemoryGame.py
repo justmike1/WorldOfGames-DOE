@@ -17,6 +17,7 @@ class Game1:
         try:    # must be a try with except because list doesn't support isdigit...
             self.user_res = list(map(int, input('Guess the generated list: ').split()))
         except ValueError:
+            print('input is invalid')
             return self.get_list_from_user()
 
 
