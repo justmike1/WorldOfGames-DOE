@@ -1,7 +1,8 @@
-import logging
 from MemoryGame import Game1
 from GuessGame import Game2
 from CurrencyRouletteGame import Game3
+import logging
+
 
 def MemoryGame(difficulty):     #Starts the game's script at requested difficulty
     print(f'Starting Memory Game with difficulty {difficulty}')
@@ -54,8 +55,15 @@ def load_game():
 def main():     #The main function which starts the whole process, after it starts load_game for user's inputs, it starts the chosen game at certain difficulty
     FORMAT = '%(message)s'
     logging.basicConfig(format=FORMAT)
-    name, d = load_game()
-    start_game(d["Game"], d["Difficulty"])
+    while True:
+        exit = input('Are you sure you want to play? (y/n): ')
+        if exit.lower() == 'n':
+            break
+        elif exit.lower() != 'y':
+            logging.warning('\ninput is invalid, try again: ')
+        else:
+            name, d = load_game()
+            start_game(d["Game"], d["Difficulty"])
 
 if __name__ == "__main__":
     main()
