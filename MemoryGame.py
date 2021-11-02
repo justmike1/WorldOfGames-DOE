@@ -14,12 +14,16 @@ class Game1:
         print('    ' * len(res_str))
 
     def get_list_from_user(self):
-        self.user_res = int(input('Guess the generated list: '))
+        try:    # must be a try with except because list doesn't support isdigit...
+            self.user_res = list(map(int, input('Guess the generated list: ').split()))
+        except ValueError:
+            return self.get_list_from_user()
+
 
     def compare_results(self):
         i = 1
         while i < 3:  # the user gets 3 tries
-            if self.user_res not in self.res:
+            if self.user_res != self.res:
                 print('The number you guessed is incorrect')
                 i += 1
                 self.get_list_from_user()
