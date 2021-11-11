@@ -3,6 +3,7 @@
 
 ## Installation
 $ git clone https://github.com/justmike1/courseproject
+
 `pip3 install -r requirements.txt`
 
 ## Running the bot
