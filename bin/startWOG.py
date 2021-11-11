@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from WorldOfGamesDEC import *
+from WorldOfGamesDEC import Live
 
 if __name__ == "__main__":
     main.Live()
