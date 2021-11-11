@@ -5,4 +5,4 @@
 `pip3 install -r requirements.txt`
 
 ## Running the bot
-`python3 MainGame.py`
+`python3 Live.py`
