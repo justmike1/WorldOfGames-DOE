@@ -2,10 +2,14 @@ from MainGame import *
 import random
 import requests
 import json
+import os
+from dotenv import load_dotenv
 
 class Game3(WoG):
     def generate(self):
-        url = "https://free.currconv.com/api/v7/convert?q=USD_ILS&compact=ultra&apiKey=3eee6e211600d6203628" #  the free API
+        load_dotenv()
+        API_KEY = os.getenv("API_KEY")
+        url = f"https://free.currconv.com/api/v7/convert?q=USD_ILS&compact=ultra&apiKey={API_KEY}" #  the free API
         res = requests.get(url)
         if res.status_code != 200:
             return -1
