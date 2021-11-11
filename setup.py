@@ -7,7 +7,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name='WorldOfGamesDEC',
-    version='1.3.3',
+    version='1.3.4',
     author='Mike Joseph',
     author_email='mikeyusufov@gmail.com',
     description='World of Games by Mike Joseph',
@@ -20,6 +20,6 @@ setuptools.setup(
     license='MIT',
     packages=['WorldOfGamesDEC'],
     install_requires=['requests'],
-    scripts=['bin/top_script.py'],
+    scripts=['bin/startWOG.py'],
 )
 
