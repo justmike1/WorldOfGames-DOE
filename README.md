@@ -9,9 +9,9 @@
 ## API_KEY
 On games's destination:
 
-`vim .env
+`vim .env`
 
-API_KEY=paste_your_key`
+`API_KEY=paste_your_key`
 
 
 ## Starting the game
