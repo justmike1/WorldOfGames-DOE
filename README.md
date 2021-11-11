@@ -7,7 +7,7 @@
 `pip3 install -r requirements.txt`
 
 ## API_KEY
-On games's destination:
+On games's folder:
 
 `vim .env`
 
