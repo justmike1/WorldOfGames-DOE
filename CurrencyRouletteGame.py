@@ -5,7 +5,7 @@ import json
 import os
 from dotenv import load_dotenv
 
-class Game3(WoG):
+class Game3(WoG, Scores):
     def generate(self):
         load_dotenv()
         API_KEY = os.getenv("API_KEY")
@@ -28,14 +28,17 @@ class Game3(WoG):
 
     def compare_results(self):
         i = 1
-        while i < 3:  # the user gets 3 tries
+        while i < 4:  # the user gets 3 tries
             if self.User_Guess not in self.gen_list:
-                print('The number you guessed is incorrect')
                 i += 1
+                logging.warning('\nThe number you guessed is incorrect, try again: ')
                 self.get_input_from_user()
             else:
-                print(f'Congrats, You made it! Generated number was {self.gen_number}!')
+                logging.info(f'Congrats, You made it! Generated number was {self.gen_number}!')
+                self.add_score()
                 break
+
+
 
 
 
