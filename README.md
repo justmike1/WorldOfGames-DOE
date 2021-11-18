@@ -11,7 +11,7 @@ On games's folder:
 
 `vim .env`
 
-`API_KEY=paste_your_key`
+`API_KEY= paste_your_key`
 
 
 ## Starting the game
