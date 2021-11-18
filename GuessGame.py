@@ -1,7 +1,7 @@
 from MainGame import *
 import random
 
-class Game2(WoG):
+class Game2(WoG, Scores):
     def generate(self):
         self.secret_number = random.randint(1, self.Difficulty)
 
@@ -11,13 +11,14 @@ class Game2(WoG):
     def compare_results(self):
         i = 1
         UserWins = False
-        while i < 3:        # the user gets 3 tries
+        while i < 4:        # the user gets 3 tries
             if self.User_Guess == str(self.secret_number):
-                print(f'Congrats, You made it! Secret number was {self.secret_number}!')
+                logging.info(f'Congrats, You made it! Secret number was {self.secret_number}!')
                 UserWins = True
+                self.add_score()
                 break
             else:
-                print('The number you guessed is incorrect')
+                logging.warning('\nThe number you guessed is incorrect, try again: ')
                 i += 1
                 self.get_input_from_user()
         return UserWins
