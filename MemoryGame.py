@@ -2,7 +2,7 @@ from MainGame import *
 import random
 import time
 
-class Game1(WoG):
+class Game1(WoG, Scores):
     def generate(self):
         self.res = random.sample(range(1, 101), self.Difficulty)
         res_str = f"Random number list is {self.res}"
@@ -27,5 +27,6 @@ class Game1(WoG):
                 self.get_input_from_user()
             else:
                 print(f'Congrats, You made it! Generated list was {self.res}!')
+                self.add_score()
                 break
 
