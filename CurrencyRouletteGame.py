@@ -5,12 +5,17 @@ import json
 import os
 from dotenv import load_dotenv
 
+
 class Game3(WoG, Scores):
     def generate(self):
         load_dotenv()
         API_KEY = os.getenv("API_KEY")
-        if API_KEY == '':
-            logging.error("Your .env is empty")
+        for key in API_KEY:
+            if key == '':
+                logging.error("Your .env is empty")
+                break
+            else:
+                continue
         url = f"https://free.currconv.com/api/v7/convert?q=USD_ILS&compact=ultra&apiKey={API_KEY}" #  the free API
         res = requests.get(url)
         if res.status_code != 200:
