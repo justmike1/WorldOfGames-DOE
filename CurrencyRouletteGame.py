@@ -1,5 +1,3 @@
-import logging
-
 from MainGame import *
 import random
 import requests
