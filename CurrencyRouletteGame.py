@@ -1,3 +1,5 @@
+import logging
+
 from MainGame import *
 import random
 import requests
@@ -10,10 +12,11 @@ class Game3(WoG, Scores):
         load_dotenv()
         API_KEY = os.getenv("API_KEY")
         if API_KEY == '':
-            logging.error("please insert an API KEY in the .env file")
+            logging.error("Your .env is empty")
         url = f"https://free.currconv.com/api/v7/convert?q=USD_ILS&compact=ultra&apiKey={API_KEY}" #  the free API
         res = requests.get(url)
         if res.status_code != 200:
+            logging.warning("Check your API")
             return -1
         else:
             data = res.text
