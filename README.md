@@ -1,7 +1,7 @@
 # Assignment
 
 ## Installation
-`git clone [https://github.com/justmike1/WorldOfGames-DevOps_Experts](https://github.com/justmike1/WorldOfGames-DOE.git)`
+`git clone https://github.com/justmike1/WorldOfGames-DOE.git`
 
 `pip3 install -r requirements.txt`
 
